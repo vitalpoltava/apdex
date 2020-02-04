@@ -1,0 +1,31 @@
+{
+  "name": "apdex",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "pack": "webpack --config webpack.config.js",
+    "babel": "babel frontend",
+    "build": "npm run pack && npm run babel"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "pug": "2.0.0-beta11",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "babel-watch": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "style-loader": "^1.0.1",
+    "css-loader": "^3.2.1"
+  }
+}
