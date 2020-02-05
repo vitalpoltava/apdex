@@ -5,6 +5,7 @@ class appStore {
     this.sortedList = sortedList;
   }
 
+  // Complexity: O(n)
   transformData(rawList) {
     const hosts = new Set();
     let sortedList = [];
@@ -18,6 +19,26 @@ class appStore {
     }
 
     return [hosts, sortedList];
+  }
+
+  getTopAppsByHost(hostId = '', sliceSize = 25) {
+    const resultList = [];
+
+    if (!hostId) {
+      return resultList;
+    }
+
+    for (let i = 0; i < this.sortedList.length; i++) {
+      if (this.sortedList[i].host.indexOf(hostId) !== -1) {
+        resultList[resultList.length] = this.sortedList[i];
+      }
+
+      if (resultList.length === sliceSize) {
+        break;
+      }
+    }
+
+    return resultList;
   }
 }
 
