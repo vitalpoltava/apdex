@@ -1,0 +1,1 @@
+export const getAppsUrl = 'http://localhost:3000/api/apps';
