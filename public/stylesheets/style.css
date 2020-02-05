@@ -13,7 +13,35 @@ html, body {
 }
 
 .header {
-    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "HelveticaNeue";
+    white-space: nowrap;
+}
+
+.header-label {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 43px;
+}
+
+.user-label {
+    flex-grow: 1;
+    padding-left: 15px;
+    font-size: 18px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.trigger-area {
+    display: flex;
+    padding-left: 30px;
+}
+
+.trigger-label {
+    padding-left: 5px;
 }
 
 .content {

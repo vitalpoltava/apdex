@@ -21,6 +21,7 @@ class appStore {
     return [hosts, sortedList];
   }
 
+  // Complexity: O(log(n))
   getTopAppsByHost(hostId = '', sliceSize = 25) {
     const resultList = [];
 

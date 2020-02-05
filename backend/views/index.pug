@@ -3,6 +3,11 @@ extends layout
 block content
   div(class='container')
       div(class='header')
+          div(class='header-label') Apps By Host
+          div(class='user-label') for user averylongemailaddress@companyname.com
+          div(class='trigger-area')
+              input(type='checkbox' id='trigger')
+              label(class='trigger-label' for='trigger') Show as list
       div(class='content')
   script
       include ../../dist/main.js

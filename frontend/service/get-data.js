@@ -3,7 +3,7 @@ const getApps = (url) => {
     .then(res => res.json())
     .then((result) => {
         if (result.message) {
-          throw new Error(result);
+          throw new Error(result.message);
         }
         return result;
       }
