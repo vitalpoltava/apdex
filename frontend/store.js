@@ -1,12 +1,12 @@
 class AppStore {
   constructor (initialSet = []) {
-    const [hosts, sortedList] = this.transformData(initialSet);
+    const [hosts, sortedList] = this._transformData(initialSet);
     this.hosts = hosts;
     this.sortedList = sortedList;
   }
 
   // Complexity: O(n)
-  transformData(rawList) {
+  _transformData(rawList) {
     const hosts = new Set();
     let sortedList = [];
 
