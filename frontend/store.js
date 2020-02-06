@@ -1,4 +1,4 @@
-class appStore {
+class AppStore {
   constructor (initialSet = []) {
     const [hosts, sortedList] = this.transformData(initialSet);
     this.hosts = hosts;
@@ -43,4 +43,4 @@ class appStore {
   }
 }
 
-export default appStore;
+export default AppStore;
