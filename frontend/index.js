@@ -14,5 +14,5 @@ getApps(getAppsUrl)
     new ListTrigger(bus);
     const renderData = new RenderData(store, bus);
 
-    renderData.renderListView();
+    renderData.renderCardView();
   });

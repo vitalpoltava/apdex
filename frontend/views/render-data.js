@@ -17,7 +17,7 @@ class RenderData {
     let template = '';
 
     for (let host of this.store.hosts) {
-      const card = new Card([host, []], isCardView);
+      const card = new Card([host, this.store.getTopAppsByHost(host, 5)], isCardView);
       template += card.template;
     }
 
@@ -26,8 +26,8 @@ class RenderData {
 
   _addEvents() {
     const [listEvent, cardEvent] = events;
-    this.bus.subscribe(listEvent, this.renderListView);
-    this.bus.subscribe(cardEvent, this.renderCardView);
+    this.bus.subscribe(listEvent, this.renderListView.bind(this));
+    this.bus.subscribe(cardEvent, this.renderCardView.bind(this));
   }
 
   renderCardView() {

@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 .container {
@@ -9,7 +8,6 @@ html, body {
     margin: 0 auto;
     padding: 30px;
     background-color: #ebedeb;
-    height: 100%;
 }
 
 .header {
@@ -47,4 +45,58 @@ html, body {
 .content {
     margin-top: 30px;
     font-family: "HelveticaNeue";
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.card:not(.half):last-child {
+    margin-bottom: 0;
+}
+
+.half {
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(50% - 15px);
+}
+
+.half:nth-child(2n) {
+    float: right;
+}
+
+.half:nth-last-child(-n+2) {
+    margin-bottom: 0;
+}
+
+.card-host-name {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-bottom: 23px;
+}
+
+.card-host-top-apps {
+    display: flex;
+    margin-bottom: 23px;
+}
+
+.card-host-top-apps:last-child {
+    margin-bottom: 0;
+}
+
+.card-host-top-apps-wrapper {
+    color: #4A4A4A;
+}
+
+.top-app-name {
+    flex: 1;
+    padding-left: 23px;
+}
+
+.apdex-number {
+    width: 2rem;
+    text-align: right;
 }
