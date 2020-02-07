@@ -1,4 +1,4 @@
-import { rootElementId } from '../constants';
+import { rootElementId, popupElementClass, popupShowClass } from '../constants';
 
 class Popup {
   constructor() {
@@ -10,7 +10,7 @@ class Popup {
   }
 
   togglePopup(el) {
-    el.querySelector('.popup-text').classList.toggle('show');
+    el.querySelector(`.${popupElementClass}`).classList.toggle(popupShowClass);
   }
 }
 

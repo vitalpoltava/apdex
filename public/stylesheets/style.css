@@ -108,7 +108,6 @@ html, body {
     user-select: none;
 }
 
-/* The actual popup */
 .popup .popup-text {
     visibility: hidden;
     background-color: #555;
@@ -123,7 +122,6 @@ html, body {
     margin-left: -80px;
 }
 
-/* Popup arrow */
 .popup .popup-text::after {
     content: "";
     position: absolute;
@@ -135,7 +133,6 @@ html, body {
     border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class - hide and show the popup */
 .popup .show {
     visibility: visible;
 }
