@@ -5,13 +5,12 @@ class Popup {
     this.popupParent = document.querySelector(`#${rootElementId}`);
     this.popupParent.addEventListener('click', evt => {
       const appItemEl = evt.target.parentNode;
-      const version = appItemEl.dataset.version;
-      this.showPopup(appItemEl, version);
+      this.togglePopup(appItemEl);
     });
   }
 
-  showPopup(el, version) {
-    console.log(version)
+  togglePopup(el) {
+    el.querySelector('.popup-text').classList.toggle('show');
   }
 }
 
