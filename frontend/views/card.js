@@ -8,7 +8,10 @@ class Card {
 
   getApps() {
     return this.apps.map(item => `
-        <div class="card-host-top-apps"><div class="apdex-number">${item.apdex}</div><div class="top-app-name">${item.name}</div></div>
+        <div class="card-host-top-apps" data-version="${item.version}">
+          <div class="apdex-number">${item.apdex}</div>
+          <div class="top-app-name">${item.name}</div>
+        </div>
     `).join('');
   }
 
