@@ -6,11 +6,11 @@
  * or half one.
  */
 class Card {
-  constructor(data, isCard = false) {
+  constructor(data, isCardFullWidth = false) {
     const [host, apps] = data;
     this.host = host;
     this.apps = apps;
-    this.isCard = isCard;
+    this.isCardFullWidth = isCardFullWidth;
   }
 
   getApps() {
@@ -27,7 +27,7 @@ class Card {
 
   get template() {
     return `
-      <div class="card${this.isCard ? ' half' : ''}">
+      <div class="card${this.isCardFullWidth ? ' half' : ''}">
         <div class="card-host-name">${this.host}</div>
         <div class="card-host-top-apps-wrapper">${this.getApps()}</div>
       </div>
