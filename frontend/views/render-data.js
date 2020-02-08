@@ -22,10 +22,6 @@ class RenderData {
     new ListTrigger(this.bus);
   }
 
-  _app(compiledTemplate = 'None yet loaded...') {
-    this.rootEl.innerHTML = compiledTemplate;
-  }
-
   _renderView(isCardView = false) {
     let template = '';
 
@@ -36,12 +32,12 @@ class RenderData {
         template += card.template;
       } else {
         const { removeHost } = events;
-        // Signal to remove host with no apps attached
+        // Signal to remove the host with no apps attached
         this.bus.publish(removeHost, host);
       }
     }
 
-    this._app(template);
+    this.rootEl.innerHTML = template;
   }
 
   _reRender() {
