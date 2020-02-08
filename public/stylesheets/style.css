@@ -118,7 +118,7 @@ html, body {
     position: absolute;
     z-index: 1;
     bottom: 125%;
-    left: 30%;
+    left: 100px;
     margin-left: -80px;
 }
 

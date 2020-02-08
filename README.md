@@ -1,5 +1,7 @@
 # Pure JS app (boilerplate)
 
+## Overall algo complexity: O(n*log(n))
+
 Install
 ---
 
