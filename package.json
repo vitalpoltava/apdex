@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./start.js",
     "pack": "webpack --config webpack.config.js",
     "babel": "babel frontend",
     "build": "npm run pack && npm run babel"

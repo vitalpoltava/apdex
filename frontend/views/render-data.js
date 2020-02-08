@@ -40,16 +40,17 @@ class RenderData {
     this.rootEl.innerHTML = template;
   }
 
-  _reRender() {
-    this.isListView ? this._renderView(false) : this._renderView(true);
-  }
-
   _addEvents() {
     const { list, card, appAdded, appRemoved } = events;
+
     this.bus.subscribe(list, this.renderListView.bind(this));
     this.bus.subscribe(card, this.renderCardView.bind(this));
     this.bus.subscribe(appAdded, this._reRender.bind(this));
     this.bus.subscribe(appRemoved, this._reRender.bind(this));
+  }
+
+  _reRender() {
+    this.isListView ? this._renderView(false) : this._renderView(true);
   }
 
   renderCardView() {
