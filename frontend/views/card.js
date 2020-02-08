@@ -1,16 +1,16 @@
 /**
  * @description
  * This class simply generates cards templates
- * based on data provided. `isCardFullWidth` param tells
+ * based on data provided. `isCardHalfWidth` param tells
  * which type of card to provide -- full width
  * or half one.
  */
 class Card {
-  constructor(data, isCardFullWidth = false) {
+  constructor(data, isCardHalfWidth = false) {
     const [host, apps] = data;
     this.host = host;
     this.apps = apps;
-    this.isCardFullWidth = isCardFullWidth;
+    this.isCardHalfWidth = isCardHalfWidth;
   }
 
   getApps() {
@@ -27,7 +27,7 @@ class Card {
 
   get template() {
     return `
-      <div class="card${this.isCardFullWidth ? ' half' : ''}">
+      <div class="card${this.isCardHalfWidth ? ' half' : ''}">
         <div class="card-host-name">${this.host}</div>
         <div class="card-host-top-apps-wrapper">${this.getApps()}</div>
       </div>
