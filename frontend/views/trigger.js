@@ -1,5 +1,10 @@
 import { triggerElementId, triggerLabelElementId, events } from '../constants';
 
+/**
+ * @description
+ * This class attaches listeners to toggle checkbox
+ * and triggers internal events to change the layout
+ */
 class ListTrigger {
   constructor(bus) {
     const {list, card} = events;

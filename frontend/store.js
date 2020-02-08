@@ -14,7 +14,14 @@ class AppStore {
     this.bus.subscribe(removeHost, this._removeHostFromList.bind(this));
   }
 
+  _removeHostFromList(host) {
+    this.hosts.delete(host);
+  }
+
   /**
+   * @description
+   * Initial data transformation.
+   * Here we populate list of hosts and sort apps list by `apdex` prop.
    * Complexity: O(n)
    */
   _transformData(rawList) {
@@ -32,11 +39,9 @@ class AppStore {
     return [hosts, sortedList];
   }
 
-  _removeHostFromList(host) {
-    this.hosts.delete(host);
-  }
-
   /**
+   * @description
+   * Here we return top apps by host (by default: 25 apps)
    * Complexity: O(log(n))
    */
   getTopAppsByHost(hostId = '', sliceSize = 25) {
@@ -61,6 +66,9 @@ class AppStore {
   }
 
   /**
+   * @description
+   * Here we adding new app to proper place in sorted list and
+   * updating hosts list (if necessary)
    * Complexity: O(log(n))
    */
   addAppToHosts(app) {
@@ -85,6 +93,11 @@ class AppStore {
   }
 
   /**
+   * @description
+   * Here we remove app from list.
+   * We do not scan all list here to check if some hosts became `orphan` after deletion.
+   * From performance perspective it's better to wait until rendering engine signals
+   * there is one.
    * Complexity: O(log(n))
    */
   removeAppFromHosts(app) {

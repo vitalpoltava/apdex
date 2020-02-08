@@ -3,6 +3,10 @@ import Card from './card';
 import Popup from './popup';
 import ListTrigger from "./trigger";
 
+/**
+ * @description
+ * This class renders data presentation layout
+ */
 class RenderData {
   constructor(store, bus) {
     this.isListView = false;

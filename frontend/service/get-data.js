@@ -1,3 +1,10 @@
+/**
+ * @description
+ * Simple data fetcher helper
+ *
+ * @param url
+ * @returns {Promise<any | never>}
+ */
 const getApps = (url) => {
   return fetch(url)
     .then(res => res.json())

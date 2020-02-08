@@ -1,6 +1,6 @@
-# Pure JS app (boilerplate)
+# Pure JS app (fetch and sort big data sets with UI)
 
-## Overall algo complexity: O(n*log(n))
+## Overall complexity: O(n*log(n))
 
 Install
 ---

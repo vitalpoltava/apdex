@@ -1,3 +1,10 @@
+/**
+ * @description
+ * This class simply generates cards templates
+ * based on data provided. `isCard` param tells
+ * which type of card to provide -- full width
+ * or half one.
+ */
 class Card {
   constructor(data, isCard = false) {
     const [host, apps] = data;
