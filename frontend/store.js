@@ -1,5 +1,10 @@
 import { events } from './constants';
 
+/**
+ * @description
+ * This class implements a data store which makes
+ * all data manipulations within the app.
+ */
 class AppStore {
   constructor (initialSet = [], bus) {
     const [hosts, sortedList] = this._transformData(initialSet);
@@ -14,6 +19,14 @@ class AppStore {
     this.bus.subscribe(removeHost, this._removeHostFromList.bind(this));
   }
 
+  /**
+   * @description
+   * In case no app is related to the host (`orphan` host)
+   * we need to remove it from hosts' list.
+   *
+   * @param host
+   * @private
+   */
   _removeHostFromList(host) {
     this.hosts.delete(host);
   }
@@ -84,6 +97,7 @@ class AppStore {
       if (this.sortedList[i].apdex <= app.apdex) {
         const { appAdded } = events;
         this.sortedList.splice(i, 0, app);
+        // Signal the app that we need re-rendering of the layout
         this.bus.publish(appAdded, undefined);
         break;
       }
@@ -110,6 +124,7 @@ class AppStore {
       if (this.sortedList[i].name === app.name) {
         const { appRemoved } = events;
         this.sortedList.splice(i, 1);
+        // Signal the app that we need re-rendering of the layout
         this.bus.publish(appRemoved, undefined);
         break;
       }

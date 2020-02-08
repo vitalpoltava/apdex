@@ -18,7 +18,7 @@ class RenderData {
     // Init popups for apps
     new Popup();
 
-    // Init layout toggling
+    // Init layout toggling (card or row)
     new ListTrigger(this.bus);
   }
 
