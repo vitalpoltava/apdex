@@ -1,7 +1,7 @@
 /**
  * @description
  * This class simply generates cards templates
- * based on data provided. `isCard` param tells
+ * based on data provided. `isCardFullWidth` param tells
  * which type of card to provide -- full width
  * or half one.
  */
