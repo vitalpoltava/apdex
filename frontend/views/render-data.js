@@ -9,7 +9,7 @@ import ListTrigger from "./trigger";
  */
 class RenderData {
   constructor(store, bus) {
-    this.isListView = false;
+    this.isCardView = true;
     this.rootEl = document.querySelector(`#${rootElementId}`);
     this.store = store;
     this.bus = bus;
@@ -22,13 +22,13 @@ class RenderData {
     new ListTrigger(this.bus);
   }
 
-  _renderView(isCardView = false) {
+  _renderView() {
     let template = '';
 
     for (let host of this.store.hosts) {
       const appsList = this.store.getTopAppsByHost(host, 5);
       if (appsList && appsList.length) {
-        const card = new Card([host, appsList], isCardView);
+        const card = new Card([host, appsList], this.isCardView);
         template += card.template;
       } else {
         const { removeHost } = events;
@@ -42,25 +42,20 @@ class RenderData {
 
   _addEvents() {
     const { list, card, appAdded, appRemoved } = events;
-
     this.bus.subscribe(list, this.renderListView.bind(this));
     this.bus.subscribe(card, this.renderCardView.bind(this));
-    this.bus.subscribe(appAdded, this._reRender.bind(this));
-    this.bus.subscribe(appRemoved, this._reRender.bind(this));
-  }
-
-  _reRender() {
-    this.isListView ? this._renderView(false) : this._renderView(true);
+    this.bus.subscribe(appAdded, this._renderView.bind(this));
+    this.bus.subscribe(appRemoved, this._renderView.bind(this));
   }
 
   renderCardView() {
-    this.isListView = false;
-    this._renderView(true);
+    this.isCardView = true;
+    this._renderView();
   }
 
   renderListView() {
-    this.isListView = true;
-    this._renderView(false);
+    this.isCardView = false;
+    this._renderView();
   }
 }
 

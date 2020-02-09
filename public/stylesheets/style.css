@@ -61,6 +61,8 @@ html, body {
     box-sizing: border-box;
     display: inline-block;
     width: calc(50% - 15px);
+    height: 380px;
+    overflow-y: scroll;
 }
 
 .half:nth-child(2n) {
